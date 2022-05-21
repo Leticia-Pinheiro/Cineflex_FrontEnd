@@ -1,8 +1,5 @@
 .telaSessoes{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
     margin-top: 67px;
     width: 100%;
 }
@@ -10,15 +7,38 @@
 .telaSessoes > span{
     color: #293845;
     font-size: 24px;
-    padding: 50px;
+    padding: 50px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
 }
 
-.sessaoDia{
+.sessoes{
     width: 100%;
 }
 
-.sessaoDia > span{
-    
-    font-size: 20px;
+.sessoes > span{
     color: #293845;
+    font-size: 20px;
+    padding: 24px;
+
+}
+
+.horarios{
+    display: flex;
+    margin-left: 23px;
+}
+
+.horario{
+    width: 83px;
+    height: 43px;
+    background-color: #E8833A;
+    color: #ffffff;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 22px 8px;
+
 }

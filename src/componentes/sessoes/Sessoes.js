@@ -27,23 +27,26 @@ export default function Sessoes(){
       return( 
 
         <div className = "telaSessoes">
-        <span> Selecione horario</span>
+          <span> Selecione o horário</span>
 
-        <div >
+          <div>
+
             {sessao.map((sessao)=>
-            <div className = "sessoes" key = {sessao.id}>
-            <span>{sessao.weekday} - {sessao.date}</span>
+              <div className = "sessoes" key = {sessao.id}>
+                <span>{sessao.weekday} - {sessao.date}</span>
 
-            <div className = "horarios">
-              {sessao.showtimes.map((hora)=>
-              <div className = "horario" key = {hora.id}>{hora.name}</div>)}
+                <div className = "horarios">                  
+                  {sessao.showtimes.map((hora)=>
+                    <div className = "horario" key = {hora.id}>
+                      {hora.name}
+                    </div>
+                  )}
+                </div>
 
-            </div>
-            </div>
-            )}
+              </div>
+            )}            
             
-            
-        </div>
+          </div>
         </div>         
 
       )
