@@ -1,12 +1,38 @@
+import {useState, useEffect} from 'react'
 import './style.css'
+import axios from 'axios'
 
 export default function Inicio(){
+
+    const [poster, setPoster] = useState([])
+
+    useEffect(() => {
+        const promisse = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies")
+
+        promisse.then(response => {
+            setPoster(response.data)
+        })
+    }, [])
+    
+
     return(
         <div className = "inicio">
             <span>Selecione o filme</span>
+
             <div className = "cartazes">
-                <div className = "cartaz"></div>            
-            </div>
+                
+                    {poster.map(poster => 
+                    <div key = {poster.id} className = "cartaz">
+                        <img src={poster.posterURL}/>
+                    </div>)}
+
+            </div>            
+            
         </div>
     )
 }
+
+
+
+
+
