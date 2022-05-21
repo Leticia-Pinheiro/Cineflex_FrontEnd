@@ -7,8 +7,7 @@ export default function Sessoes(){
 
     const {idFilme} = useParams()
 
-    const [sessao, setSessao] = useState([])
-    const [horarios, setHorarios] = useState([])
+    const [sessao, setSessao] = useState([])    
 
     useEffect(() => {
         const promisse = axios.get(
@@ -41,9 +40,7 @@ export default function Sessoes(){
                     <Link to={`/assentos/${hora.id}`}>                   
                       {hora.name}                   
                     </Link>
-                  </div>
-                    
-                  
+                  </div>                 
                   )}
                 </div>
 

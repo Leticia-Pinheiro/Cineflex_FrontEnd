@@ -16,3 +16,26 @@
     justify-content: center;
     align-items: center;
 }
+
+.assentos{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.assento{
+    width: 26px;
+    height: 26px;
+    border-radius: 12px;
+    background-color: #C3CFD9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #808F9D;
+    font-size: 11px;
+
+    margin: 9px 4px;
+}
