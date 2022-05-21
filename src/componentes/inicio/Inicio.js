@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import { Link } from "react-router-dom";
 import './style.css'
 import axios from 'axios'
 
@@ -22,8 +23,14 @@ export default function Inicio(){
             <div className = "cartazes">
                 
                     {poster.map(poster => 
-                    <div key = {poster.id} className = "cartaz">
-                        <img src={poster.posterURL}/>
+                    <div key = {poster.id}> 
+                    <Link to={`/sessoes/${poster.id}`}>
+
+                    <div className = "cartaz">                        
+                            <img src={poster.posterURL}/>                     
+                    </div>
+                    
+                    </Link>
                     </div>)}
 
             </div>            

@@ -1,0 +1,24 @@
+.telaSessoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 67px;
+    width: 100%;
+}
+
+.telaSessoes > span{
+    color: #293845;
+    font-size: 24px;
+    padding: 50px;
+}
+
+.sessaoDia{
+    width: 100%;
+}
+
+.sessaoDia > span{
+    
+    font-size: 20px;
+    color: #293845;
+}
