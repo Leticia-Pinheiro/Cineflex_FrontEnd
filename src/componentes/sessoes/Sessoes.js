@@ -8,6 +8,7 @@ export default function Sessoes(){
     const {idFilme} = useParams()
 
     const [sessao, setSessao] = useState([])
+    const [horarios, setHorarios] = useState([])
 
     useEffect(() => {
         const promisse = axios.get(
@@ -16,30 +17,34 @@ export default function Sessoes(){
     
         promisse.then((response) => {
           setSessao(response.data.days);
+          
         });
       }, []);
 
-      return(
-          <div className = "telaSessoes">
-              <span>Selecione o horário</span>
 
-              <div className = "sessoes">
-                  
-                  {sessao.map(sessao => 
-                    <div key = {sessao.id} className = "sessaoDia">
-                        
-                            
-                            <span>{sessao.weekday} - {sessao.date}</span>
-                            <div className = "horario">
-                                
-                            </div>
-                        
-                        
-                    </div>)}
-                  
-              </div>
+    
 
-          </div>
+      return( 
+
+        <div className = "telaSessoes">
+        <span> Selecione horario</span>
+
+        <div >
+            {sessao.map((sessao)=>
+            <div className = "sessoes" key = {sessao.id}>
+            <span>{sessao.weekday} - {sessao.date}</span>
+
+            <div className = "horarios">
+              {sessao.showtimes.map((hora)=>
+              <div className = "horario" key = {hora.id}>{hora.name}</div>)}
+
+            </div>
+            </div>
+            )}
+            
+            
+        </div>
+        </div>         
 
       )
 
