@@ -1,6 +1,6 @@
 import './style.css'
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function Sessoes(){
@@ -37,9 +37,13 @@ export default function Sessoes(){
 
                 <div className = "horarios">                  
                   {sessao.showtimes.map((hora)=>
-                    <div className = "horario" key = {hora.id}>
-                      {hora.name}
-                    </div>
+                  <div className = "horario" key = {hora.id}>
+                    <Link to={`/assentos/${hora.id}`}>                   
+                      {hora.name}                   
+                    </Link>
+                  </div>
+                    
+                  
                   )}
                 </div>
 
