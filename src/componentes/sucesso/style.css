@@ -1,0 +1,32 @@
+.telaSucesso{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 67px;
+    width: 100%;
+}
+
+.telaSucesso > span{
+    color: #247A6B;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 50px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.informacoes{
+    width: 360px;
+}
+
+.informacao{
+    padding: 20px;
+}
+
+.informacao > span{
+    font-size: 24px;
+    font-weight: 700;
+}

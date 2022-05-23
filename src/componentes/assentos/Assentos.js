@@ -2,13 +2,18 @@ import './style.css'
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import styled from "styled-components"
+
+
+
 
 export default function Assentos(){
-
+    let idReservado = [];
+    let nome;
+    let cpf; 
     const {idSessao} = useParams()
 
     const [assentos, setAssentos] = useState([])
+    
     
 
     useEffect(() => {
@@ -23,13 +28,32 @@ export default function Assentos(){
       }, []);   
 
 
-    function Selecao(i){
+    function Selecao(i){    
         
+        let opcao = document.getElementById(i)
+        if(opcao.classList.contains("selecionado")){
+            opcao.classList.remove("selecionado")
+        }else{
+            opcao.classList.add("selecionado")
+            // idReservado.push[i]
+        }
+    
         
-        let opcao = document.getElementById(i)        
-        {(opcao.classList.contains("selecionado"))? 
-        opcao.classList.remove("selecionado"):
-        opcao.classList.add("selecionado")}       
+    }     
+    
+    
+
+    function Reservar(){
+        const promisse = axios.post(`https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many`)
+
+        nome = document.querySelector(".nome").value
+        cpf = document.querySelector(".cpf").value
+        let reserva = {
+            // ids: idReservado,
+            name: nome,
+            cpf: cpf         
+        }    
+        console.log(reserva)      
     }
 
 
@@ -66,15 +90,17 @@ export default function Assentos(){
                 <div className = "dados">
                     <div className = "dado">
                         <span>Nome do comprador:</span>
-                        <input type ="text" placeholder='Digite seu nome...'></input>
+                        <input className = "nome" type ="text" placeholder='Digite seu nome...'></input>
                     </div>
                     <div className = "dado">
                         <span>CPF do comprador:</span>
-                        <input type ="text" placeholder='Digite seu cpf...'></input>
+                        <input className = "cpf" type ="text" placeholder='Digite seu cpf...'></input>
                     </div>
                 </div> 
 
-                <div className = "botao">Reservar Assento</div>       
+                <Link to = {`/sucesso/${nome}`}>
+                    <div className = "botao" onClick={Reservar}>Reservar Assento</div>       
+                </Link>
 
             </div>
         </div>
