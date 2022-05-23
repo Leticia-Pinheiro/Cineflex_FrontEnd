@@ -18,24 +18,94 @@
 }
 
 .assentos{
-    width: 100%;
+    width: 360px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 24px;
+    
 }
 
-.assento{
+/* .assento{
     width: 26px;
     height: 26px;
     border-radius: 12px;
-    background-color: #C3CFD9;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #808F9D;
+    
     font-size: 11px;
 
     margin: 9px 4px;
+} */
+
+
+.legendas{
+    width: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.legenda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.legenda > div{
+    width: 25px;
+    height: 25px;
+    border-radius: 17px;
+}
+
+.lgSelecionado{
+    background-color:#8DD7CF;
+    border: 1px solid #1AAE9E;
+ 
+}
+
+.lgDisponivel{
+    background: #C3CFD9;
+    border: 1px solid #7B8B99;
+}
+
+.lgIndisponivel{
+    background: #FBE192;
+    border: 1px solid #F7C52B;
+}
+
+.dado{
+    padding: 7px;
+}
+.dado > span{
+    font-size: 18px;
+    color:#293845;    
+}
+
+.dado > input{
+    width: 327px;
+    height: 51px;
+    background: #FFFFFF;
+    border: 1px solid #D5D5D5;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.botao{
+    width: 225px;
+    height: 42px;
+    background: #E8833A;
+    border-radius: 3px;
+    font-size: 18px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 57px;
 }
