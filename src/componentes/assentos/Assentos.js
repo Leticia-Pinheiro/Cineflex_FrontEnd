@@ -25,7 +25,8 @@ export default function Assentos(){
 
     function Selecao(i){
         
-        let opcao = document.getElementById(i)
+        
+        let opcao = document.getElementById(i)        
         {(opcao.classList.contains("selecionado"))? 
         opcao.classList.remove("selecionado"):
         opcao.classList.add("selecionado")}       
@@ -39,14 +40,13 @@ export default function Assentos(){
             <div className = "assentos">
 
                 {assentos.map((assentos)=>
-                    <Seat isAvailable = {assentos.isAvailable} key = {assentos.id} id = {assentos.id} onClick = {()=>Selecao(assentos.id)} >
-                    
-
+                    <div className = {(assentos.isAvailable === true)? "assento seatDisponivel": "assento seatIndisponivel"} key = {assentos.id} id = {assentos.id} onClick = {()=>Selecao(assentos.id)} >                    
                         {assentos.name}
-
-                    
-                    </Seat>             
+                    </div>             
                 )}  
+
+                   
+
 
                 <div className = "legendas">
                     <div className ="legenda">
@@ -84,15 +84,3 @@ export default function Assentos(){
     
 }
 
-const Seat = styled.div`
-    width: 26px;
-    height: 26px;
-    border-radius: 12px;    
-    display: flex;
-    align-items: center;
-    justify-content: center;    
-    font-size: 11px;
-    margin: 9px 4px;
-    background-color: ${ props  =>  props . isAvailable  ===  true ? "#C3CFD9" : "#FBE192" } ;
-    border: 1px solid ${ props  =>  props . isAvailable  ===  true ? "#7B8B99" : "#F7C52B" } ;
-`
